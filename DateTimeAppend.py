@@ -16,7 +16,7 @@ def process_csv(input_file):
 
         for row in reader:
             date_time_str = row[0] + " " + row[1]
-            date_time_obj = datetime.strptime(date_time_str, "%Y/%m/%d %I:%M %p")
+            date_time_obj = datetime.strptime(date_time_str, "%m/%d/%Y %I:%M %p")
             row[0] = date_time_obj
             del row[1]
             writer.writerow(row)

@@ -1,8 +1,10 @@
 import requests
 from lxml import html
+from datetime import datetime
 
 def getIrradiance():
-    url = "https://www.wunderground.com/dashboard/pws/KTNKNOXV761/table/2023-03-27/2023-03-27/daily"
+    today = datetime.now().strftime('%Y-%m-%d')
+    url = f"https://www.wunderground.com/dashboard/pws/KTNKNOXV761/table/{today}/{today}/daily"
     response = requests.get(url)
 
     # Check if the request was successful
